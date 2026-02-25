@@ -1,28 +1,31 @@
 <?php get_header(); ?>
 
-<div class="container">
+<?php get_template_part('template-parts/sections/hero'); ?>
 
-  <h1>Blog</h1>
+<div class="blog-container">
 
-  <?php
-  if (have_posts()):
-    while (have_posts()):
-      the_post();
-  ?>
+<?php if (have_posts()) : ?>
 
-      <article>
-        <h2>
-          <a href="<?php the_permalink(); ?>">
-            <?php the_title(); ?>
-          </a>
-        </h2>
+    <?php while (have_posts()) : the_post(); ?>
 
-        <?php the_excerpt(); ?>
+        <article>
+            <h2>
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                </a>
+            </h2>
 
-      </article>
+            <?php the_excerpt(); ?>
 
-  <?php endwhile;
-  endif; ?>
+        </article>
+
+    <?php endwhile; ?>
+
+<?php else : ?>
+
+    <p>No posts found.</p>
+
+<?php endif; ?>
 
 </div>
 

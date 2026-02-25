@@ -10,9 +10,9 @@
         alt="<?php bloginfo('name'); ?>"
         class="footer-logo">
 
-    <p class="footer-description">
+    <!-- <p class="footer-description">
         "Innovating the future, one solution at a time. We're committed to delivering exceptional value and transforming ideas into reality."
-    </p>
+    </p> -->
 
     <!-- Email Subscribe -->
     <form class="footer-subscribe" action="#" method="post">
