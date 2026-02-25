@@ -1,6 +1,8 @@
 <footer class="site-footer">
   <div class="container">
 
+    <?php get_template_part('template-parts/footer/footer', 'top'); ?>
+
     <?php get_template_part('template-parts/footer/footer', 'main'); ?>
 
     <?php get_template_part('template-parts/footer/footer', 'bottom'); ?>

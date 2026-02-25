@@ -259,3 +259,21 @@ function remove_contact_from_primary_menu($items, $args) {
 }
 
 add_filter('wp_nav_menu_objects', 'remove_contact_from_primary_menu', 10, 2);
+
+
+function franz_fix_services_menu_active($classes, $item, $args) {
+
+    // Check if we're on services archive
+    if (is_post_type_archive('services') && $item->url && strpos($item->url, '/services') !== false) {
+        $classes[] = 'current-menu-item';
+    }
+
+    // Check if we're on single services page
+    if (is_singular('services') && $item->url && strpos($item->url, '/services') !== false) {
+        $classes[] = 'current-menu-item';
+    }
+
+    return $classes;
+}
+
+add_filter('nav_menu_css_class', 'franz_fix_services_menu_active', 10, 3);
