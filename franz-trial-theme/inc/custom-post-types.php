@@ -7,35 +7,37 @@
 */
 
 // Register Services CPT
-function theme_register_services_cpt() {
+function register_services_cpt() {
 
     $labels = array(
-        'name'               => 'Services',
-        'singular_name'      => 'Service',
-        'add_new'            => 'Add New Service',
-        'add_new_item'       => 'Add New Service',
-        'edit_item'          => 'Edit Service',
-        'new_item'           => 'New Service',
-        'view_item'          => 'View Service',
-        'search_items'       => 'Search Services',
-        'not_found'          => 'No Services Found',
-        'not_found_in_trash' => 'No Services Found in Trash',
+        'name' => 'Services',
+        'singular_name' => 'Service',
+        'menu_name' => 'Services',
+        'name_admin_bar' => 'Service',
+        'add_new' => 'Add Service',
+        'add_new_item' => 'Add New Service',
+        'new_item' => 'New Service',
+        'edit_item' => 'Edit Service',
+        'view_item' => 'View Service',
+        'all_items' => 'All Services',
+        'search_items' => 'Search Services',
+        'not_found' => 'No Services found',
+        'not_found_in_trash' => 'No Services found in Trash',
     );
 
     $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'has_archive'        => true,
-        'rewrite'            => array('slug' => 'services'),
-        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt'),
-        'menu_icon'          => 'dashicons-portfolio',
-        'show_in_rest'       => true, // Gutenberg support
+        'labels' => $labels,
+        'public' => true,
+        'menu_icon' => 'dashicons-hammer',
+        'supports' => array('title', 'editor'),
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'services'),
+        'show_in_rest' => false,
     );
 
     register_post_type('services', $args);
 }
-
-add_action('init', 'theme_register_services_cpt');
+add_action('init', 'register_services_cpt');
 
 
 // Register Team Members CPT
@@ -73,3 +75,13 @@ function theme_register_team_cpt() {
 }
 
 add_action('init', 'theme_register_team_cpt');
+
+
+// Register Testimonials CPT
+register_post_type('testimonial', [
+    'label' => 'Testimonials',
+    'public' => true,
+    'has_archive' => true,
+    'menu_icon' => 'dashicons-format-quote',
+    'supports' => ['title', 'editor', 'thumbnail'],
+]);

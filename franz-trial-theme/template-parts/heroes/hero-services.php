@@ -1,10 +1,9 @@
-<section class="hero hero-home">
+<section class="hero hero-home hero-services">
     <div class="container hero-grid">
 
-        <div class="subcontainer area-1">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/home/abstract.svg" alt="Abstract Shape">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/home/hero.png" alt="Hero Image 1">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/home/icon.svg" alt="Hero Icon">
+        <div class="subcontainer area-1 no-display">
+
+            
         </div>
         <div class="subcontainer area-2">
             <h1>
@@ -15,18 +14,6 @@
             </h2>
         </div>
         <div class="subcontainer area-3">
-            <div class="button-group">
-                <button>
-                    <a href="/properties" class="cta-button first">
-                        Learn More
-                    </a>
-                </button>
-                <button>
-                    <a href="/contact" class="cta-button">
-                        Browse Services
-                    </a>
-                </button>
-            </div>
         </div>
         
         <div class="subcontainer area-4">

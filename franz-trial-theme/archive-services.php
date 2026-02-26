@@ -9,4 +9,10 @@ get_header();
 
 get_template_part('template-parts/sections/hero');
 
+get_template_part('template-parts/sections/services');
+
+get_template_part('template-parts/sections/testimonials');
+
 get_footer();
+
+?>

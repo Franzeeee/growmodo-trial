@@ -1,5 +1,5 @@
 <section class="hero hero-home section-info">
-    <div class="container hero-grid section-info-grid">
+    <div class="container hero-grid section-info-grid first-section-info">
 
         <div class="subcontainer area-1"></div>
 
