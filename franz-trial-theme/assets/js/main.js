@@ -4,6 +4,8 @@ console.log("Theme loaded");
 document.addEventListener("DOMContentLoaded", function(){
 
     const closeBannerBtn = document.getElementById("closeBannerBtn");
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.querySelector(".nav-menu");
 
     if(closeBannerBtn){
         closeBannerBtn.addEventListener("click", closeBanner);
@@ -25,15 +27,23 @@ document.addEventListener("DOMContentLoaded", function(){
         document.cookie =
             "franz_banner_closed=1; path=/; max-age=" + 60;
 
-    }
+        menu.classList.add("top-hidden");
 
-    const toggle = document.getElementById("menuToggle");
-    const menu = document.querySelector(".nav-menu");
+    }
 
     if(toggle){
 
         toggle.addEventListener("click", function(){
             menu.classList.toggle("active");
+
+            if (!closeBannerBtn) {
+                // If the banner is closed, ensure the menu stays in the correct position
+                if (menu.classList.contains("active")) {
+                    menu.classList.add("top-hidden");
+                } else {
+                    menu.classList.remove("top-hidden");
+                }
+            }
         });
 
     }

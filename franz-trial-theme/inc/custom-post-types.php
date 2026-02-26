@@ -48,20 +48,25 @@ function theme_register_team_cpt() {
         'add_new_item'       => 'Add New Team Member',
         'edit_item'          => 'Edit Team Member',
         'new_item'           => 'New Team Member',
-        'view_item'          => 'View Member',
+        'view_item'          => 'View Team Member',
         'search_items'       => 'Search Team Members',
-        'not_found'          => 'No Team Members Found',
-        'not_found_in_trash' => 'No Team Members Found in Trash',
+        'not_found'           => 'No Team Members Found',
+        'not_found_in_trash'  => 'No Team Members Found in Trash',
     );
 
     $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'has_archive'        => false,
-        'rewrite'            => array('slug' => 'team'),
-        'supports'            => array('title', 'thumbnail'),
-        'menu_icon'          => 'dashicons-groups',
-        'show_in_rest'       => true,
+        'labels'              => $labels,
+        'public'              => true,
+        'publicly_queryable'   => true,
+        'has_archive'          => false, // Keep false if you don't need /team archive
+        'rewrite'              => array(
+            'slug'       => 'team',
+            'with_front'  => false
+        ),
+        'supports'             => array('title', 'thumbnail'),
+        'menu_icon'            => 'dashicons-groups',
+        'show_in_rest'          => true,
+        'exclude_from_search'   => false,
     );
 
     register_post_type('team', $args);

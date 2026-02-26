@@ -1,7 +1,15 @@
-<div style="background-color: var(--color-grey-10); padding: 40px 0; text-align: center;">
-  <h2 style="color: var(--color-white); font-size: 24px; margin-bottom: 20px;">Ready to Get Started?</h2>
-  <a href="/contact" class="header-cta active" style="padding: 12px 30px; font-size: 16px;">
-    Contact Us
-  </a>
-    
-</div>
+<section class="footer-cta">
+  <div class="footer-cta-container">
+    <h2 class="footer-cta-title">
+      Start Your Real Estate Journey Today
+    </h2>
+
+    <p class="footer-cta-text">
+      Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way.
+    </p>
+
+    <a href="/contact" class="footer-cta-btn">
+      Contact Us
+    </a>
+  </div>
+</section>
