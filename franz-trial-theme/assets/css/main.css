@@ -1255,6 +1255,10 @@ li.current-menu-ancestor:not(:hover) > a {
     object-fit: contain;
 }
 
+.home-section .hero-grid{
+    gap: 0 !important;
+}
+
 .contact-form .values-card .content-wrapper .get-direction-button {
     display: flex;
     justify-content: center;
@@ -1512,6 +1516,15 @@ li.current-menu-ancestor:not(:hover) > a {
     flex-direction: column;
     gap: 40px;
 }
+
+.custom-button {
+    padding: 18px 24px;
+    background-color: var(--color-grey-10);
+    border: 1px solid var(--color-grey-15);
+    border-radius: 10px;
+    color: var(--color-white);
+}
+
 
 /* ==============================
    Action Card

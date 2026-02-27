@@ -193,3 +193,40 @@ function register_property_cpt() {
 
 }
 add_action('init', 'register_property_cpt');
+
+
+/*
+|--------------------------------------------------------------------------
+| Register FAQ CPT
+|--------------------------------------------------------------------------
+*/
+
+function register_faq_cpt() {
+
+    $labels = array(
+        'name' => 'FAQs',
+        'singular_name' => 'FAQ',
+        'menu_name' => 'FAQs',
+        'add_new' => 'Add FAQ',
+        'add_new_item' => 'Add New FAQ',
+        'edit_item' => 'Edit FAQ',
+        'view_item' => 'View FAQ',
+        'all_items' => 'All FAQs',
+        'search_items' => 'Search FAQs',
+        'not_found' => 'No FAQs found',
+        'not_found_in_trash' => 'No FAQs found in Trash',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'menu_icon' => 'dashicons-editor-help',
+        'supports' => array('title', 'editor'),
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'faqs'),
+    );
+
+    register_post_type('faq', $args);
+}
+
+add_action('init', 'register_faq_cpt');
