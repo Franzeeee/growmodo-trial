@@ -3,28 +3,24 @@ $title = $args['title'] ?? 'Default Title';
 
 $cards = $args['cards'] ?? [
     [
-        'icon' => '📞',
-        'title' => 'Call Us',
-        'url'  => 'tel:+1234567890',
-        'desc'  => 'Reach us anytime'
+        'icon' => 'mail-purple.svg',
+        'title' => 'info@estatein.com',
+        'url'  => 'mailto:info@estatein.com',
     ],
     [
-        'icon' => '✉️',
-        'title' => 'Email',
-        'url'  => 'mailto:test@email.com',
-        'desc'  => 'Send us a message'
+        'icon' => 'phone-purple.svg',
+        'title' => '+1 (123) 456-7890',
+        'url'  => 'tel:+11234567890',
     ],
     [
-        'icon' => '📍',
-        'title' => 'Location',
+        'icon' => 'location-purple.svg',
+        'title' => 'Main Headquarters',
         'url'  => 'https://www.google.com/maps/place/Your+Office+Address',
-        'desc'  => 'Visit our office'
     ],
     [
-        'icon' => '💬',
-        'title' => 'Live Chat',
+        'icon' => 'fire-purple.svg',
+        'title' => 'Instagram LinkedIn Facebook',
         'url'  => '#',
-        'desc'  => 'Chat with support'
     ]
 ];
 ?>
@@ -53,7 +49,7 @@ $cards = $args['cards'] ?? [
                     <img class="go-to" src="<?php echo get_template_directory_uri(); ?>/assets/icons/go-to.svg" alt="<?php echo esc_attr( $card['title'] ); ?> Icon">
                     <div class="icon-wrapper">
                         <div class="icon-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/social-twitter.svg" alt="<?php echo esc_attr( $card['title'] ); ?> Icon">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/<?php echo esc_attr( $card['icon'] ); ?>" alt="<?php echo esc_attr( $card['title'] ); ?> Icon">
                         </div>
                     </div>
                     <h3><?php echo esc_html( $card['title'] ); ?></h3>
@@ -64,3 +60,4 @@ $cards = $args['cards'] ?? [
 
     </div>
 </section>
+
