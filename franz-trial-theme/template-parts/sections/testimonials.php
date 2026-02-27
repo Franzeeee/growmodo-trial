@@ -1,4 +1,4 @@
-<section class="hero hero-home section-info">
+<section class="hero hero-home section-info" id="testimonials">
     <div class="container hero-grid section-info-grid">
 
         <div class="subcontainer area-1"></div>

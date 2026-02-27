@@ -12,5 +12,5 @@ get_template_part('template-parts/sections/hero');
 
 get_template_part('template-parts/sections/section', 'info');
 
-
+get_template_part('template-parts/component/scroll-top');
 get_footer();

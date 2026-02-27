@@ -1,4 +1,4 @@
-<section class="hero hero-home hero-services">
+<section class="hero hero-home hero-services" id="potfolio>
     <div class="container hero-grid">
 
         <div class="subcontainer area-1 no-display">

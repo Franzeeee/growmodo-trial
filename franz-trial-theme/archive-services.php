@@ -13,6 +13,8 @@ get_template_part('template-parts/sections/services');
 
 get_template_part('template-parts/sections/testimonials');
 
+get_template_part('template-parts/component/scroll-top');
+
 get_footer();
 
 ?>

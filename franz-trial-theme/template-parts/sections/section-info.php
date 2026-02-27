@@ -1,4 +1,4 @@
-<section class="hero hero-home section-info">
+<section class="hero hero-home section-info" id="values">
     <div class="container hero-grid section-info-grid first-section-info">
 
         <div class="subcontainer area-1"></div>
@@ -135,7 +135,7 @@
 
     </div>
 
-    <div class="container hero-grid section-info-grid">
+    <div class="container hero-grid section-info-grid" id="our-works">
 
         <div class="subcontainer area-1"></div>
 
@@ -187,7 +187,7 @@
 
     </div>
 
-    <div class="container hero-grid section-info-grid">
+    <div class="container hero-grid section-info-grid" id="how-it-works">
 
         <div class="subcontainer area-1"></div>
 
@@ -268,7 +268,7 @@
             </h2>
         </div>
         
-        <div class="subcontainer area-4 info-subsection team-section">
+        <div class="subcontainer area-4 info-subsection team-section" id="team">
             <div class="values-card">
                 <div class="content-wrapper">
                     <?php get_template_part('template-parts/sections/team'); ?>

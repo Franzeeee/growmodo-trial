@@ -1430,7 +1430,9 @@ li.current-menu-ancestor:not(:hover) > a {
     border-radius: 8px;
     padding-block: 15px;
     border: none;
+    text-decoration: none !important;
 }
+
 
 
 
@@ -2183,7 +2185,7 @@ li.current-menu-ancestor:not(:hover) > a {
     }
 
     .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 40px;
     }
 

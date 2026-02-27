@@ -23,6 +23,7 @@ function franz_theme_setup()
       'footer-2'    => 'Footer Menu 2',
       'footer-3'    => 'Footer Menu 3',
       'footer-4'    => 'Footer Menu 4',
+      'footer-5'    => 'Footer Menu 5',
   ]);
 
 }

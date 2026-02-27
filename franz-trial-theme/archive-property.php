@@ -4,4 +4,5 @@
 
     <?php get_template_part('template-parts/sections/properties-section'); ?>
 
+    <?php get_template_part('template-parts/component/scroll-top'); ?>
 <?php get_footer(); ?>

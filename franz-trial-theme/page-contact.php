@@ -11,4 +11,5 @@ get_template_part('template-parts/heroes/hero', 'contact');
 
 get_template_part('template-parts/sections/contact');
 
+get_template_part('template-parts/component/scroll-top');
 get_footer();

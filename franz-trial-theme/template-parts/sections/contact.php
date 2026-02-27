@@ -1,7 +1,7 @@
 
-<section class="hero hero-home section-info contact-form">
+<section class="hero hero-home section-info contact-form"  id="contact-form">
 
-    <div class="container hero-grid section-info-grid form-section">
+    <div class="container hero-grid section-info-grid form-section" >
 
         <div class="subcontainer area-1"></div>
 
@@ -76,7 +76,7 @@
 
 </section>
 
-<section class="hero hero-home section-info contact-form">
+<section class="hero hero-home section-info contact-form" id="our-offices>
 
     <div class="container hero-grid section-info-grid">
 

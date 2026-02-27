@@ -1,4 +1,4 @@
-<section class="hero hero-home section-info properties-section">
+<section class="hero hero-home section-info properties-section" id="properties">
     <div class="container hero-grid section-info-grid service-first-subsection section-1">
 
         <div class="subcontainer area-1 no-display">
