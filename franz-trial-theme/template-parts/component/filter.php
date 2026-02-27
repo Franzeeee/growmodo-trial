@@ -1,4 +1,4 @@
-<div class="filter-container">
+<div class="filter-container property-filter-container">
     <div class="search-bar">
         <input type="text" placeholder="Search properties..." name="property-search" id="property-search">
         <button class="search-button">

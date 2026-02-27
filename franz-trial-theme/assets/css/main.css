@@ -1945,12 +1945,12 @@ li.current-menu-ancestor:not(:hover) > a {
     }
 
     .hero-home .area-2 {
-        padding: 2rem 2.8rem !important;
+        padding: 2rem 2.8rem;
         padding-top: 60px !important;
         margin: 0;
         margin-left: auto;
         max-width: 630px;
-        padding-bottom: 0 !important;
+        padding-bottom: 0;
     }
 
     .hero-home .area-3 {
@@ -2138,6 +2138,8 @@ li.current-menu-ancestor:not(:hover) > a {
     .contact-form .contact-location {
         grid-template-columns: 1fr;
         padding-inline: 1rem !important;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .contact-form .area4 {
@@ -2152,19 +2154,19 @@ li.current-menu-ancestor:not(:hover) > a {
         max-height: 130px !important;
     }
 
-    .filter-container {
+    .property-filter-container {
         gap: 0px !important;
         position: relative;
         top: -3.5rem;
     }
 
-    .filter-container .search-bar {
+    .property-filter-container .search-bar {
         width: 80%;
         max-width: 1000px;
         margin: auto;
     }
 
-    .filter-container .select-container {
+    .property-filter-container .select-container {
         flex-direction: row;
         padding: 10px;
     }
@@ -2305,6 +2307,21 @@ li.current-menu-ancestor:not(:hover) > a {
 
     .slide { min-width: 50%; }
 
+    .contact-office-intro {
+        max-width: 1200px !important;
+        padding-bottom: 1rem !important;
+        margin: auto !important;
+        padding-left: 1rem !important;
+    }
+
+    .slide-content {
+        max-width: 400px;
+    }
+
+    .controls {
+        width: 90vw;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -2322,7 +2339,7 @@ li.current-menu-ancestor:not(:hover) > a {
     }
 
     .controls {
-        width: 100vw;
+        width: 90vw;
     }
 }
 

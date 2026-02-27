@@ -82,7 +82,7 @@
 
         <div class="subcontainer area-1"></div>
 
-        <div class="subcontainer area-2">
+        <div class="subcontainer area-2 contact-office-intro">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/abstract.svg" alt="Abstract Shape">
             <h1>
                 Discover Our Office Locations
@@ -94,7 +94,7 @@
         
         <div class="subcontainer area-4 info-subsection info-navigating contact-location">
             <div class="values-card filter-card">
-                <ul class="filter-container">
+                <ul class="filter-container ">
                         <li data-value="all" class="active">All</li>
                         <li data-value="regional">Regional</li>
                         <li data-value="international">International</li>
