@@ -400,6 +400,13 @@ li.current-menu-ancestor:not(:hover) > a {
     overflow: hidden;
 }
 
+.nav-menu a:hover {
+    border: none;
+    border-radius: none;
+    color: none;
+    background: transparent;
+}
+
 .mobile-menu .header-cta::after {
     content: "";
     position: absolute;

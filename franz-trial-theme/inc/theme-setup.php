@@ -61,7 +61,7 @@ add_action('init', function () {
     'About Us'  => 'about-us',
     'Services'  => 'services',
     'Contact'   => 'contact',
-    'Blog'      => 'blog'
+    'Properties'      => 'properties'
   ];
 
   $created_pages = [];
@@ -98,8 +98,8 @@ add_action('init', function () {
       update_option('page_on_front', $created_pages['home']);
   }
 
-  if (isset($created_pages['blog'])) {
-      update_option('page_for_posts', $created_pages['blog']);
+  if (isset($created_pages['properties'])) {
+      update_option('page_for_posts', $created_pages['properties']);
   }
 
   // --------------------------
@@ -278,72 +278,20 @@ function franz_fix_services_menu_active($classes, $item, $args) {
 
 add_filter('nav_menu_css_class', 'franz_fix_services_menu_active', 10, 3);
 
+add_filter('nav_menu_css_class', function($classes, $item) {
 
-/*
-|--------------------------------------------------------------------------
-| Register Office Location CPT and Taxonomy
-|--------------------------------------------------------------------------
-*/
-function register_office_location_cpt() {
+    // Check if we are on property archive or single property
+    if (is_post_type_archive('property') || is_singular('property')) {
 
-    register_post_type('office_location', array(
-        'label' => 'Office Locations',
-        'public' => true,
-        'menu_icon' => 'dashicons-location',
-        'add_new_item' => 'Add New Location',
-        'edit_item' => 'Edit Location',
-        'singular_name' => 'Office Location',
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'has_archive' => true,
-        'rewrite' => array('slug' => 'locations'),
-    ));
+        // Get archive URL
+        $archive_url = get_post_type_archive_link('property');
 
-}
-add_action('init', 'register_office_location_cpt');
+        // If this menu item links to the property archive
+        if (trailingslashit($item->url) === trailingslashit($archive_url)) {
+            $classes[] = 'current-menu-item';
+        }
+    }
 
-function register_location_taxonomy() {
+    return $classes;
 
-    register_taxonomy('location_type', 'office_location', array(
-        'label' => 'Location Type',
-        'hierarchical' => true,
-        'rewrite' => array('slug' => 'location-type'),
-    ));
-
-}
-add_action('init', 'register_location_taxonomy');
-
-
-/*
-|--------------------------------------------------------------------------
-| Register Property CPT and Taxonomy
-|--------------------------------------------------------------------------
-*/
-
-function register_property_cpt() {
-
-    $labels = array(
-        'name'               => 'Properties',
-        'singular_name'      => 'Property',
-        'menu_name'          => 'Properties',
-        'add_new'            => 'Add Property',
-        'add_new_item'       => 'Add New Property',
-        'edit_item'          => 'Edit Property',
-        'new_item'           => 'New Property',
-        'view_item'          => 'View Property',
-        'search_items'       => 'Search Properties',
-        'not_found'           => 'No properties found',
-        'not_found_in_trash'   => 'No properties found in Trash',
-    );
-
-    register_post_type('property', array(
-        'labels' => $labels,
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-building',
-        'supports' => array('title'),
-        'rewrite' => array('slug' => 'properties'),
-        'show_in_rest' => true,
-    ));
-
-}
-add_action('init', 'register_property_cpt');
+}, 10, 2);

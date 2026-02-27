@@ -68,4 +68,5 @@ document.addEventListener("DOMContentLoaded", function(){
                 console.log("Selected filter:", e.target.dataset.value);
             }
         });
+
 });
