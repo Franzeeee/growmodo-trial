@@ -36,8 +36,8 @@
             'footer-1',
             'footer-2',
             'footer-3',
-            'footer-4',
             'footer-5',
+            'footer-4',
         ];
 
         foreach ($footer_locations as $location) {
