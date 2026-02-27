@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const closeBannerBtn = document.getElementById("closeBannerBtn");
     const toggle = document.getElementById("menuToggle");
     const menu = document.querySelector(".nav-menu");
+    const mobileMenu = document.querySelector(".mobile-menu");
 
     if(closeBannerBtn){
         closeBannerBtn.addEventListener("click", closeBanner);
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         toggle.addEventListener("click", function(){
             menu.classList.toggle("active");
+            mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
 
             if (!closeBannerBtn) {
                 // If the banner is closed, ensure the menu stays in the correct position
@@ -48,4 +50,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
     }
 
+
+    const filterContainer = document.querySelector(".contact-location .filter-container");
+    
+    if (!filterContainer) return;
+
+        filterContainer.addEventListener("click", function(e) {
+
+            if (e.target.tagName === "LI") {
+
+                this.querySelectorAll("li").forEach(li => 
+                    li.classList.remove("active")
+                );
+
+                e.target.classList.add("active");
+
+                console.log("Selected filter:", e.target.dataset.value);
+            }
+        });
 });

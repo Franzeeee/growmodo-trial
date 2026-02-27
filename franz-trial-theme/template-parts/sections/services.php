@@ -51,7 +51,6 @@
                 wp_reset_postdata();
 
             else:
-                // Fallback: static services
             ?>
 
                 <div class="values-card">

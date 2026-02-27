@@ -85,3 +85,41 @@ register_post_type('testimonial', [
     'menu_icon' => 'dashicons-format-quote',
     'supports' => ['title', 'editor', 'thumbnail'],
 ]);
+
+
+// Register About Pages CPT
+function register_about_pages_cpt() {
+
+    $labels = array(
+        'name' => 'About Pages',
+        'singular_name' => 'About Page',
+        'menu_name' => 'About Pages',
+        'add_new' => 'Add About Page',
+        'add_new_item' => 'Add New About Page',
+        'edit_item' => 'Edit About Page',
+        'view_item' => 'View About Page',
+        'all_items' => 'All About Pages',
+        'search_items' => 'Search About Pages',
+        'not_found' => 'No About Pages found',
+        'not_found_in_trash' => 'No About Pages found in Trash',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'menu_icon' => 'dashicons-info',
+        'supports' => array('title', 'editor'), // only title + content
+        'has_archive' => false,
+        'show_in_rest' => true, // Gutenberg editor enabled
+    );
+
+    register_post_type('about_pages', $args);
+}
+add_action('init', 'register_about_pages_cpt');
+
+add_filter('use_block_editor_for_post_type', function($use_block_editor, $post_type) {
+    if ($post_type === 'about_pages') {
+        return false; // Disable Gutenberg, use Classic Editor
+    }
+    return $use_block_editor;
+}, 10, 2);

@@ -6,70 +6,131 @@
         <div class="subcontainer area-2">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/abstract.svg" alt="Abstract Shape">
             <h1>
-                Our Values
+                <?php 
+                // Dynamic heading
+                $values_heading = get_field('values_heading'); 
+                echo $values_heading ? esc_html($values_heading) : 'Our Values';
+                ?>
             </h1>
             <h2>
-                Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.
+                <?php 
+                // Dynamic description
+                $values_description = get_field('values_description'); 
+                echo $values_description ? wp_kses_post($values_description) : 'Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.';
+                ?>
             </h2>
         </div>
         
         <div class="subcontainer area-4 info-subsection">
-            <div class="values-card">
-                <div class="icon-wrapper">
-                    <div class="icon-container">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+            <?php 
+            // Check if at least one card has content
+            $value1_title = get_field('value1_title');
+            if ($value1_title) : 
+            ?>
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="<?php echo esc_attr($value1_title); ?>">
+                        </div>
+                        <h3><?php echo esc_html($value1_title); ?></h3>
                     </div>
-                    <h3>Trust</h3>
-                </div>
-                <div class="values-description">
-                    <p>
-                        Trust is the cornerstone of every successful real estate transaction.
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="values-card">
-                <div class="icon-wrapper">
-                    <div class="icon-container">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+                    <div class="values-description">
+                        <p><?php echo esc_html(get_field('value1_description')); ?></p>
                     </div>
-                    <h3>Excellence</h3>
                 </div>
-                <div class="values-description">
-                    <p>
-                        We set the bar high for ourselves. From the properties we list to the services we provide.
-                    </p>
-                </div>
-            </div>
 
-            <div class="values-card">
-                <div class="icon-wrapper">
-                    <div class="icon-container">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+                <?php if ($value2_title = get_field('value2_title')) : ?>
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="<?php echo esc_attr($value2_title); ?>">
+                        </div>
+                        <h3><?php echo esc_html($value2_title); ?></h3>
                     </div>
-                    <h3>Client-Centric</h3>
+                    <div class="values-description">
+                        <p><?php echo esc_html(get_field('value2_description')); ?></p>
+                    </div>
                 </div>
-                <div class="values-description">
-                    <p>
-                        Your dreams and needs are at the center of our universe. We listen, understand.
-                    </p>
-                </div>
-            </div>
+                <?php endif; ?>
 
-            <div class="values-card">
-                <div class="icon-wrapper">
-                    <div class="icon-container">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+                <?php if ($value3_title = get_field('value3_title')) : ?>
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="<?php echo esc_attr($value3_title); ?>">
+                        </div>
+                        <h3><?php echo esc_html($value3_title); ?></h3>
                     </div>
-                    <h3>Our Commitment</h3>
+                    <div class="values-description">
+                        <p><?php echo esc_html(get_field('value3_description')); ?></p>
+                    </div>
                 </div>
-                <div class="values-description">
-                    <p>
-                        We are dedicated to providing you with the highest level of service, professionalism
-                    </p>
+                <?php endif; ?>
+
+                <?php if ($value4_title = get_field('value4_title')) : ?>
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="<?php echo esc_attr($value4_title); ?>">
+                        </div>
+                        <h3><?php echo esc_html($value4_title); ?></h3>
+                    </div>
+                    <div class="values-description">
+                        <p><?php echo esc_html(get_field('value4_description')); ?></p>
+                    </div>
                 </div>
-            </div>
+                <?php endif; ?>
+
+            <?php else: ?>
+                <!-- Fallback: static cards -->
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+                        </div>
+                        <h3>Trust</h3>
+                    </div>
+                    <div class="values-description">
+                        <p>Trust is the cornerstone of every successful real estate transaction.</p>
+                    </div>
+                </div>
+
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+                        </div>
+                        <h3>Excellence</h3>
+                    </div>
+                    <div class="values-description">
+                        <p>We set the bar high for ourselves. From the properties we list to the services we provide.</p>
+                    </div>
+                </div>
+
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+                        </div>
+                        <h3>Client-Centric</h3>
+                    </div>
+                    <div class="values-description">
+                        <p>Your dreams and needs are at the center of our universe. We listen, understand.</p>
+                    </div>
+                </div>
+
+                <div class="values-card">
+                    <div class="icon-wrapper">
+                        <div class="icon-container">
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/about/star-icon.svg" alt="Respect Icon">
+                        </div>
+                        <h3>Our Commitment</h3>
+                    </div>
+                    <div class="values-description">
+                        <p>We are dedicated to providing you with the highest level of service, professionalism.</p>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
 
     </div>
