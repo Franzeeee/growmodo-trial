@@ -3,5 +3,6 @@
     <?php get_template_part('template-parts/sections/hero'); ?>
     <?php get_template_part('template-parts/sections/home-section'); ?>
     
+    <?php get_template_part('template-parts/component/scroll-top'); ?>
 
 <?php get_footer(); ?>

@@ -29,7 +29,7 @@ $cards = $args['cards'] ?? [
 ];
 ?>
 
-<section class="hero hero-home hero-services hero-contact">
+<section class="hero hero-home hero-services hero-contact properties-hero">
     <div class="container hero-grid">
 
         <div class="subcontainer area-1 no-display">
@@ -44,22 +44,9 @@ $cards = $args['cards'] ?? [
                 Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey 
             </h2>
         </div>
-        <div class="subcontainer area-3">
+        <div class="subcontainer area-3 no-display">
         </div>
-        <div class="subcontainer area-4">
-            <div class="cards-grid">
-                <?php foreach ( $cards as $card ) : ?>
-                <div class="card">
-                    <img class="go-to" src="<?php echo get_template_directory_uri(); ?>/assets/icons/go-to.svg" alt="<?php echo esc_attr( $card['title'] ); ?> Icon">
-                    <div class="icon-wrapper">
-                        <div class="icon-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/social-twitter.svg" alt="<?php echo esc_attr( $card['title'] ); ?> Icon">
-                        </div>
-                    </div>
-                    <h3><?php echo esc_html( $card['title'] ); ?></h3>
-                </div>
-                <?php endforeach; ?>
-            </div>
+        <div class="subcontainer area-4 no-display">
         </div>
 
     </div>

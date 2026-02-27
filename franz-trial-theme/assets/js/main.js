@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const toggle = document.getElementById("menuToggle");
     const menu = document.querySelector(".nav-menu");
     const mobileMenu = document.querySelector(".mobile-menu");
+    const mainNav = document.querySelector(".main-nav");
 
     if(closeBannerBtn){
         closeBannerBtn.addEventListener("click", closeBanner);
@@ -24,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function(){
             banner.style.display = "none";
         }, 500);
 
-        // Save preference using cookie for 1 minute (60 seconds) so that the banner doesn't show again during this time
+        // Save preference using cookie for 1 minute (5 seconds) so that the banner doesn't show again during this time
         document.cookie =
-            "franz_banner_closed=1; path=/; max-age=" + 60;
+            "franz_banner_closed=1; path=/; max-age=" + 5;
 
         menu.classList.add("top-hidden");
 
@@ -68,27 +69,5 @@ document.addEventListener("DOMContentLoaded", function(){
                 console.log("Selected filter:", e.target.dataset.value);
             }
         });
-
-
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', () => {
-
-            const answer = item.querySelector('.faq-answer');
-            const toggle = item.querySelector('.faq-toggle');
-
-            const isOpen = answer.style.display === 'block';
-
-            // Close all
-            document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-            document.querySelectorAll('.faq-toggle').forEach(t => t.textContent = '+');
-
-            // Toggle clicked one
-            if (!isOpen) {
-                answer.style.display = 'block';
-                toggle.textContent = '−';
-            }
-
-        });
-    });
 
 });

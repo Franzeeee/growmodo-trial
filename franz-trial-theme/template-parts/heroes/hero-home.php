@@ -4,7 +4,7 @@
         <div class="subcontainer area-1">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/home/abstract.svg" alt="Abstract Shape">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/home/hero.png" alt="Hero Image 1">
-            <img src="<?php echo get_template_directory_uri() ?>/assets/images/home/icon.svg" alt="Hero Icon">
+            <img class="circle-icon" src="<?php echo get_template_directory_uri() ?>/assets/images/home/icon.svg" alt="Hero Icon">
         </div>
         <div class="subcontainer area-2">
             <h1>
